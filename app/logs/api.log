@@ -1,0 +1,2 @@
+INFO:werkzeug: * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [15/Jul/2022 03:18:20] "GET /api/posts/2 HTTP/1.1" 200 -

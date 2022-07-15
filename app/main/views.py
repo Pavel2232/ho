@@ -8,3 +8,9 @@ def page_index():
     posts = PostDAO(DATA_PATH)
     post = posts.load_data()
     return render_template('index.html', posts= post)
+
+@main_blueprint.route("/users/<username>")
+def user_feed_page(username):
+    posts = PostDAO(DATA_PATH)
+    post = posts.get_posts_all(username)
+    return render_template('user-feed.html' , userpost = post)
