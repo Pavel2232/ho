@@ -30,12 +30,17 @@ class PostDAO:
               post["likes_count"],
               post["pk"]
               ))
-          return posts
+      return posts
 
     def get_all(self):
         return self.load_data()
 
     def get_posts_all(self, user_name):
+
+        if type(user_name) != str:
+            raise TypeError("user_name не  str")
+
+
         posts = self.load_data()
         users_posts = []
         post_lower = str(user_name).lower()
@@ -46,6 +51,11 @@ class PostDAO:
         return users_posts
 
     def search_for_posts(self,query):
+
+
+       if type(query) != str:
+           raise TypeError("query не  str")
+
        posts = self.load_data()
        list_post = []
        post_lower = str(query).lower()
@@ -57,6 +67,13 @@ class PostDAO:
        return list_post
 
     def get_post_by_pk(self, pk):
+
+
+
+        if type(pk) != int:
+            raise TypeError("pk должно быть целым числом")
+
+
         posts = self.load_data()
         for post in posts:
             if post.pk == pk:

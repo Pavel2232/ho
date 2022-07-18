@@ -1,4 +1,3 @@
-import json
 
 class Post:
 
@@ -12,5 +11,13 @@ class Post:
         self.pk = pk
 
     def __repr__(self):
-        return f"{self.poster_name}"
+        return f"Post( " \
+               f"{self.poster_name},"\
+               f"{self.poster_avatar},"\
+               f"{self.pic},"\
+               f"{self.content},"\
+               f"{self.views_count},"\
+               f"{self.likes_count},"\
+               f"{self.pk},"\
+               f")"
 
